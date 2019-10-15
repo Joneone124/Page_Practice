@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>锤子</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #topbar{
+            height: 50px;
+            width: 100%;
+            background-color: #262729;
+            position: relative;
+        }
+        #logo{
+            height: 28px;
+            width: 32px;
+            margin-top: -2px;
+            margin-left: 20px;
+        }
+        #ul1 li{
+            float: left;
+            list-style: none;
+            color: #A5A6A6;
+            margin-right: 40px;
+            margin-top: 14px;
+        }
+        #ul2 li{
+            float: right;
+        }
+        #ul1 li a{
+            color: #A5A6A6;
+            text-decoration: none;
+        }
+        #user{
+            height: 28px;
+            width: 32px;
+            margin-top: 10px;
+        }
+        #buy{
+            height: 28px;
+            width: 32px;
+            margin-top: 10px;
+        }
+        #loright1{
+            margin-right: 10px;
+        }
+        #loright2{
+            margin-right: 10px;
+        }
+        #nextbar{
+            height: 80px;
+            width: 100%;
+        }
+        #ul3 li{
+            color: #373737;
+            float: left;
+            margin-left: 20px;
+            margin-top: 26px;
+            list-style: none;
+        }
+        #ul3 li a{
+            color: #373737;
+            text-decoration: none;
+        }
+        #shouye{
+            margin-left: 40px;
+        }
+        #ul4 li{
+            float: right;
+            list-style: none;
+            text-decoration: none;
+            margin-top: 24px;
+            margin-right: 40px;
+        }
+        #content{
+            height: 3000px;
+            width: 100%;
+            background-color: #EDEDED;
+        }
+        #lunbo{
+            /*height: 1200px;*/
+            /*width: 100%;*/
+            /*border: 1px solid;*/
+
+            border-color: #B4B4B4;
+            text-align: center;
+        }
+        #botu1{
+            height: 525px;
+            width: 1050px;
+            margin: 30px auto;
+            border: 1px solid;
+            border-color: #B4B4B4;
+            border-radius: 5px;
+        }
+        #show{
+            width: 1050px;
+            border: 1px solid;
+            border-color: #B4B4B4;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px auto;
+
+        }
+        #showtop{
+            height: 58px;
+            background-color: #FAFAFA;
+        }
+        #shanpin{
+            font-weight: bold;
+            color: #373737;
+            font-size: 20px;
+            margin-top: 16px;
+            margin-left: 30px;
+            float: left;
+        }
+        table{
+            border: 1px solid;
+            border-color: #DBDBDB;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        td{
+            border: 1px solid;
+            border-color: #DBDBDB;
+            width: 262px;
+            height: 400px;
+        }
+        .zheng{
+            width: 210px;
+            height: 220px;
+            /*text-align: center;*/
+            /*vertical-align: middle;*/
+            /*background-color: red;*/
+            margin: auto;
+            /*position: relative;*/
+        }
+        .zheng img{
+            /*vertical-align: middle;*/
+            margin: auto;
+            /*position: absolute;*/
+            /*left: 50%;*/
+            /*top: 50%;*/
+            /*margin-left: -40%;*/
+            /*margin-top: -50%;*/
+        }
+        #di{
+            margin-top: 30px;
+        }
+        #gao{
+            /*margin-top: -18px;*/
+        }
+        .zi1{
+            font-weight: bold;
+            font-size: 14px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .zi2{
+            /*margin-top: 10px;*/
+            font-size: 12px;
+            color: #999999;
+        }
+        .dian{
+            margin-top: 10px;
+        }
+        #sou{
+            width: 350px;
+            height: 40px;
+            margin-top: -6px;
+            border-radius: 20px;
+            border-collapse: collapse;
+            border: 1px solid;
+            border-color: #cccccc;
+            /*background-image: url("20.PNG");*/
+            /*background-repeat: no-repeat;*/
+        }
+        #li4{
+            /*background-color: red;*/
+            position: relative;
+        }
+        #btn{
+            border:none;
+            background: none;
+            /*margin-right: 50px;*/
+            position: absolute;
+            top: 0;
+            right: 8px;
+        }
+        #a1:hover{
+            color: #E5E5E5;
+        }
+        #a2:hover{
+            color: #E5E5E5;
+        }
+        #a3:hover{
+            color: #E5E5E5;
+        }
+        #a4:hover{
+            color: #E5E5E5;
+        }
+        #a5:hover{
+            color: #E5E5E5;
+        }
+        #a6:hover{
+            color: #E5E5E5;
+        }
+        #a7:hover{
+            color: #E5E5E5;
+        }
+        #a8:hover{
+            color: #E5E5E5;
+        }
+        #shouye:hover{
+            color: #3E6EB5;
+        }
+        #shouye2:hover{
+            color: #3E6EB5;
+        }
+        #shouye3:hover{
+            color: #3E6EB5;
+        }
+        #shouye4:hover{
+            color: #3E6EB5;
+        }
+        #shouye5:hover{
+            color: #3E6EB5;
+        }
+        #shouye6:hover{
+            color: #3E6EB5;
+        }
+        #shouye7:hover{
+            color: #3E6EB5;
+        }
+        #yinbar{
+            width: 100%;
+            height: 300px;
+            background-color: red;
+            /*margin-top: 80px;*/
+            position: absolute;
+            top: 130px;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="zong">
+        <div id="topbar">
+            <ul id="ul1">
+                <li>
+                    <img src="1.PNG" id="logo">
+                </li>
+                <li><a href="#" id="a1">在线商城</a></li>
+                <li><a href="#" id="a2">坚果Pro 2S</a></li>
+                <li><a href="#" id="a3">坚果 R1</a></li>
+                <li><a href="#" id="a4">坚果 TNT 工作站</a></li>
+                <li><a href="#" id="a5">Smartisan OS</a></li>
+                <li><a href="#" id="a6">欢喜云</a></li>
+                <li><a href="#" id="a7">应用</a></li>
+                <li><a href="#" id="a8">论坛</a></li>
+            </ul>
+            <ul id="ul2">
+                <li id="loright1"><a href="#"><img src="2.PNG" id="user"></a></li>
+                <li id="loright2"><a href="#"><img src="3.PNG" id="buy"></a></li>
+            </ul>
+            <div id="yinbar"></div>
+        </div>
+
+        <div id="nextbar">
+            <ul id="ul3">
+                <li><a href="#" id="shouye">首页</a></li>
+                <li><a href="#" id="shouye2">手机</a></li>
+                <li><a href="#" id="shouye3">官方配件</a></li>
+                <li><a href="#" id="shouye4">服饰箱包</a></li>
+                <li><a href="#" id="shouye5">畅呼吸</a></li>
+                <li><a href="#" id="shouye6">基因检测</a></li>
+                <li><a href="#" id="shouye7">服务</a></li>
+            </ul>
+            <ul id="ul4">
+                <li id="li4">
+                    <input type="text" id="sou">
+                    <button id="btn"><img src="20.PNG"></button>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="lunbo">
+                <img src="4.png" id="botu1">
+            </div>
+            <div id="show">
+                <div id="showtop">
+                    <div id="shanpin">热门商品</div>
+                    <div id="jian1"></div>
+                    <div id="jian2"></div>
+                </div>
+                <div id="showdown">
+                    <table>
+                        <tr>
+                            <td id="td1" onmouseover="fun2(this);" onmouseleave="fun3(this);">
+                                <div class="zheng" ><img src="6.PNG"></div>
+                                <div class="zi1" id="gao">落栗 衬衫 牛津纺</div>
+                                <div></div>
+                                <div><img src="10.PNG" class="dian"></div>
+                                <div><a href="#"><img src="14.PNG" class="dian"></a></div>
+                            </td>
+                            <td onmouseover="fun2(this);" onmouseleave="fun3(this);">
+                                <div class="zheng"><img src="7.PNG" id="di"></div>
+                                <div class="zi1">坚果砖式蓝牙小音箱</div>
+                                <div class="zi2">一款设计出色、音质出众的随身音箱</div>
+                                <div><img src="11.PNG" class="dian"></div>
+                                <div><a href="#"><img src="15.PNG" class="dian"></a></div>
+                            </td>
+                            <td onmouseover="fun2(this);" onmouseleave="fun3(this);">
+                                <div class="zheng"><img src="8.PNG"></div>
+                                <div class="zi1">坚果 QuickCharge 4+ 快速充电器</div>
+                                <div class="zi2">全面兼容的 18W 快速充电</div>
+                                <div><img src="12.PNG" class="dian"></div>
+                                <div><a href="#"><img src="16.PNG" class="dian"></a></div>
+                            </td>
+                            <td onmouseover="fun2(this);" onmouseleave="fun3(this);">
+                                <div class="zheng"><img src="9.PNG"></div>
+                                <div class="zi1">C-force USB-C多功能转接器</div>
+                                <div class="zi2">可以替换Switch底座的超便携4K视频转接器</div>
+                                <div><img src="13.PNG" class="dian"></div>
+                                <div><a href="#"><img src="17.PNG" class="dian"></a></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        flag = false;
+        setInterval(fun1,1500);
+        function fun1(){
+            // console.log('ssss');
+            // console.log(document.getElementById('botu1').src)
+            if (flag == false){
+                document.getElementById('botu1').src = '5.png';
+                flag = true;
+            }
+            else{
+                document.getElementById('botu1').src = '4.png';
+                flag = false;
+            }
+        }
+        function fun2(ele) {
+            console.log(ele.lastElementChild.firstElementChild);
+            ele.lastElementChild.firstElementChild.firstElementChild.src = '18.PNG';
+        }
+        function fun3(ele) {
+            ele.lastElementChild.firstElementChild.firstElementChild.src = '14.PNG';
+        }
+    </script>
+</body>
+</html>
