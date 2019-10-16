@@ -53,6 +53,9 @@
         #nextbar{
             height: 80px;
             width: 100%;
+            border: 1px solid;
+            border-color: #DBDBDB;
+            /*margin-bottom: 100px;*/
         }
         #ul3 li{
             color: #373737;
@@ -79,35 +82,55 @@
             height: 3000px;
             width: 100%;
             background-color: #EDEDED;
+            /*margin-top: 30px;*/
         }
         #lunbo{
             /*height: 1200px;*/
             /*width: 100%;*/
-            /*border: 1px solid;*/
-
-            border-color: #B4B4B4;
+            border: 1px solid;
+            border-radius: 10px;
+            width: 1220px;
+            height: 554px;
+            margin: 0 auto;
+            border-color: #DBDBDB;
             text-align: center;
         }
         #botu1{
-            height: 525px;
-            width: 1050px;
+            height: 554px;
+            width: 1220px;
             margin: 30px auto;
-            border: 1px solid;
-            border-color: #B4B4B4;
-            border-radius: 5px;
+            border-color: #DBDBDB;
         }
         #show{
-            width: 1050px;
-            border: 1px solid;
-            border-color: #B4B4B4;
-            border-radius: 5px;
+            width: 1220px;
+            /*border: 1px solid;*/
+            /*border-color: #DBDBDB;*/
+            /*border-radius: 10px;*/
             text-align: center;
             margin: 20px auto;
 
         }
         #showtop{
+            border: 1px solid;
+            border-color: #DBDBDB;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
             height: 58px;
             background-color: #FAFAFA;
+        }
+        #showdown{
+            border-bottom: 1px solid;
+            border-color: #DBDBDB;
+            /*border-bottom-right-radius: 10px;*/
+            /*border-bottom-left-radius: 10px;*/
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        #down{
+            border: 1px solid;
+            border-color: black;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
         #shanpin{
             font-weight: bold;
@@ -127,7 +150,7 @@
         td{
             border: 1px solid;
             border-color: #DBDBDB;
-            width: 262px;
+            width: 305px;
             height: 400px;
         }
         .zheng{
@@ -239,11 +262,105 @@
         #yinbar{
             width: 100%;
             height: 300px;
-            background-color: red;
+            background-color: white;
             /*margin-top: 80px;*/
             position: absolute;
             top: 130px;
             /*display: none;*/
+        }
+        .lie{
+            float: left;
+            margin-left: 100px;
+        }
+        #dong li{
+                width: 1220px;
+                height: 554px;
+                float: left;
+                list-style: none;
+                /*border: 1px solid;*/
+                /*border-color: #E1E1E1;*/
+                /*border-radius: 5px;*/
+        }
+        /*#tu1{*/
+            /*float: left;*/
+            /**/
+        /*}*/
+        /*#tu2{*/
+            /*float: left;*/
+        /*}*/
+        #dong{
+            width: 4880px;
+            height: 525px;
+            float: left;
+            border: 1px solid;
+            border-color: #E1E1E1;
+            border-radius: 5px;
+            animation: myani 8s 0s alternate ease-in-out infinite;
+            -ms-animation: myani 8s 0s alternate ease-in-out infinite;
+            -moz-animation: myani 8s 0s alternate ease-in-out infinite;
+            -webkit-animation: myani 8s 0s alternate ease-in-out infinite;
+        }
+        @keyframes myani {
+                0% {
+                    margin-left: 0px;
+                }
+                50% {
+                    margin-left: -1220px;
+                }
+                75% {
+                    margin-left: -2440px;
+                }
+                100% {
+                    margin-left: -3660px;
+                }
+            }
+        #lunbo{
+            overflow: hidden;
+        }
+        .lie{
+            color: #A1A1A1;
+            font-size: 15px;
+            list-style-type: none;
+            margin-top: 16px;
+            /*vertical-align: inherit;*/
+        }
+        .lie li{
+            margin-bottom: 18px;
+            /*vertical-align: inherit;*/
+            /*background-color: #000000;*/
+            width: 150px;
+            height: 32px;
+            text-align: center;
+        }
+        .lie li a{
+            color: #242733;
+            font-size: 15px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            vertical-align: center;
+            /*vertical-align: inherit;*/
+        }
+        .lie li img{
+            margin-bottom: -8px;
+            margin-right: 10px;
+        }
+        #youlie li a img{
+            /*margin-right: 10px;*/
+            margin-left: 0px;
+        }
+        #aa{
+            /*text-align: center;*/
+            /*vertical-align: inherit;*/
+            /*margin-bottom: 20px;*/
+            /*margin-top: 40px;*/
+            /*margin-left: 10px;*/
+        }
+        #youlie{
+            margin-left: 350px;
+        }
+        #yinbar{
+            opacity: 0;
+            transition: all .5s ease-in-out;
         }
     </style>
 </head>
@@ -267,12 +384,37 @@
                 <li id="loright1"><a href="#"><img src="2.PNG" id="user"></a></li>
                 <li id="loright2"><a href="#"><img src="3.PNG" id="buy"></a></li>
             </ul>
-            <div id="yinbar"></div>
+            <div id="yinbar" onmouseover="xian(this);" onmouseleave="yin(this);">
+                <ul class="lie">
+                    <li>手机</li>
+                    <li><img src="23.PNG" width="30px"><a href="#">手机</a></li>
+                </ul>
+                <ul class="lie">
+                    <li>官方配件</li>
+                    <li><img src="24.fw.png" width="30px"><a href="#" id="aa"> &nbsp;&nbsp;数据线</a></li>
+                    <li><img src="25.fw.png" width="30px"><a href="#">  &nbsp;&nbsp;充电器</a></li>
+                    <li><img src="26.fw.png" width="30px"><a href="#">线控耳机</a></li>
+                    <li><img src="27.fw.png" width="30px"><a href="#">移动电源</a></li>
+                    <li><img src="28.fw.png" width="30px"><a href="#">拍照配件</a></li>
+                </ul>
+                <ul class="lie" id="youlie">
+                    <li>畅呼吸系列</li>
+                    <li><a href="#"><img src="29.fw.png" width="30px"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;空气净化器</a></li>
+                    <li><a href="#"><img src="30.fw.png" width="30px"><a href="#">生活电器配件</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <ul class="lie">
+                    <li>服饰箱包</li>
+                    <li><img src="31.fw.png" width="30px"><a href="#">箱包</a></li>
+                    <li><img src="32.fw.png" width="30px"><a href="#">男装</a></li>
+                    <li><img src="33.fw.png" width="30px"><a href="#">&nbsp;&nbsp;&nbsp;鞋</a></li>
+                </ul>
+            </div>
         </div>
 
         <div id="nextbar">
             <ul id="ul3">
-                <li><a href="#" id="shouye">首页</a></li>
+                <li><a href="#" id="shouye" onmouseover="xian(this);" onmouseleave="yin(this);">首页</a></li>
                 <li><a href="#" id="shouye2">手机</a></li>
                 <li><a href="#" id="shouye3">官方配件</a></li>
                 <li><a href="#" id="shouye4">服饰箱包</a></li>
@@ -288,8 +430,21 @@
             </ul>
         </div>
         <div id="content">
+            <div style="height: 30px"></div>
             <div id="lunbo">
-                <img src="4.png" id="botu1">
+                <!--<img src="4.png" id="botu1">-->
+
+
+
+                <ul id="dong" style="margin-top: -1px">
+                    <li><img src="4.jpg" height="554px" ; width= "1220px" id="tu1"></li>
+                    <li><img src="5.jpg" height="554px" ; width= "1220px" id="tu2"></li>
+                    <li><img src="21.jpg" height="554px" ; width= "1220px" id="tu3"></li>
+                    <li><img src="22.jpg" height="554px" ; width= "1220px" id="tu4"></li>
+                </ul>
+
+
+
             </div>
             <div id="show">
                 <div id="showtop">
@@ -298,7 +453,7 @@
                     <div id="jian2"></div>
                 </div>
                 <div id="showdown">
-                    <table>
+                    <table id="down">
                         <tr>
                             <td id="td1" onmouseover="fun2(this);" onmouseleave="fun3(this);">
                                 <div class="zheng" ><img src="6.PNG"></div>
@@ -337,25 +492,46 @@
     </div>
     <script>
         flag = false;
-        setInterval(fun1,1500);
-        function fun1(){
-            // console.log('ssss');
-            // console.log(document.getElementById('botu1').src)
-            if (flag == false){
-                document.getElementById('botu1').src = '5.png';
-                flag = true;
-            }
-            else{
-                document.getElementById('botu1').src = '4.png';
-                flag = false;
-            }
-        }
+        flag1 = false;
+        // setInterval(fun1,1500);
+        // function fun1(){
+        //     // console.log('ssss');
+        //     // console.log(document.getElementById('botu1').src)
+        //     if (flag == false){
+        //         document.getElementById('botu1').src = '5.png';
+        //         flag = true;
+        //     }
+        //     else{
+        //         document.getElementById('botu1').src = '4.png';
+        //         flag = false;
+        //     }
+        // }
         function fun2(ele) {
             console.log(ele.lastElementChild.firstElementChild);
             ele.lastElementChild.firstElementChild.firstElementChild.src = '18.PNG';
         }
         function fun3(ele) {
             ele.lastElementChild.firstElementChild.firstElementChild.src = '14.PNG';
+        }
+        function xian(ele) {
+            if(ele.tagName == 'A'){
+                flag1 = true;
+                document.getElementById('yinbar').style.opacity = '1';
+                document.getElementById('yinbar').style.visibility = 'visible';
+            }
+            else {
+                if (flag1 == true){
+                    flag1 =false;
+                    document.getElementById('yinbar').style.opacity = '1';
+                    document.getElementById('yinbar').style.visibility = 'visible';
+                }
+            }
+
+
+        }
+        function yin(ele) {
+            document.getElementById('yinbar').style.opacity = '0';
+            document.getElementById('yinbar').style.visibility = 'didden';
         }
     </script>
 </body>
