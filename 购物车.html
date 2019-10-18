@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        *{
+            color: #666666;
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            width: 1000px;
+            /*height: 490px;*/
+            border: 1px solid #A7CBFF;
+            border-top: 3px solid #A7CBFF;
+            border-bottom: 1px solid #C8C8C8;
+            border-collapse: collapse;
+            margin: 50px auto;
+
+        }
+        .ding{
+            background-color: #E2F2FF;
+        }
+        .zheng{
+            height: 100px;
+        }
+        td{
+            border: 1px solid #A7CBFF;
+            /*text-align: center;*/
+
+        }
+        th{
+            border: 1px solid #A7CBFF;
+        }
+        .yin{
+            border: 0;
+            cursor: pointer;
+            background: none;
+        }
+        img{
+            margin-left: 20px;
+        }
+        #check{
+            align: center;
+            veralign: middle;
+        }
+        .di{
+            background-image: url("5.png");
+        }
+        .didi{
+            margin-left: 20px;
+        }
+        .shuru{
+            width: 50px;
+            height: 25px;
+
+        }
+        .bianjian, .bianjia{
+            width: 20px;
+            height: 28px;
+            background-color: #C8C8C8;
+            border: none;
+        }
+        #gai1{
+            width: 150px;
+        }
+        .hou{
+            width: 104px;
+        }
+        .yi{
+            width: 80px;
+        }
+        .dishan{
+            margin-left: 20px;
+            margin-right: 470px;
+        }
+        #show, #money{
+            color: red;
+        }
+        #jiesuan{
+            font-weight: bold;
+            font-size: 15px;
+        }
+        #dicang{
+            position: relative;
+        }
+        #caidan{
+            height: 110px;
+            width: 891px;
+            border: 1px solid;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <table class="all">
+        <tr class="ding">
+            <th class="yi" height="40px" ><input type="checkbox" id="quanxuan"><span>全选</span></th>
+            <th>商品</th>
+            <th width="150px">单价</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th class="hou">操作</th>
+        </tr>
+        <tr class="zheng">
+            <td align="center"><input type="checkbox" name="check" class="c1"></td>
+            <td><img src="1.jpg" name="tu" width="110px" height="110px" align="absmiddle">Casio/卡西欧 EX-TR350</td>
+            <td align="center" name="danjia">5999.88</td>
+            <td align="center">
+                <button class="bianjian" id="sub1" onclick="subfun(this);">-</button>
+                <input type="text" class="shuru" id="ru1" value="1" onkeyup="chufa(this);">
+                <button class="bianjia" id="plus1" onclick="plusfun(this);">+</button>
+            </td>
+            <td align="center" id="gai1" name="gai">5999.88</td>
+            <td align="center"><button class="yin" onclick="removerow(this);">删除</button></td>
+        </tr>
+        <tr class="zheng">
+            <td align="center"><input type="checkbox" name="check"></td>
+            <td><img src="2.jpg" name="tu" width="110px" height="74px" align="absmiddle">Canon/佳能 PowerShot SX50 HS</td>
+            <td align="center" name="danjia">3888.50</td>
+            <td align="center">
+                <button class="bianjian" id="sub2" onclick="subfun(this);">-</button>
+                <input type="text" class="shuru" id="ru2" value="1" onkeyup="chufa(this);">
+                <button class="bianjia" id="plus2" onclick="plusfun(this);">+</button>
+            </td>
+            <td align="center" id="gai2" name="gai">3888.50</td>
+            <td align="center"><button class="yin" onclick="removerow(this);">删除</button></td>
+        </tr>
+        <tr class="zheng">
+            <td align="center"><input type="checkbox" name="check"></td>
+            <td><img src="3.jpg" name="tu" width="110px" height="83px" align="absmiddle">Sony/索尼 DSC-WS300</td>
+            <td align="center" name="danjia">1428.50</td>
+            <td align="center">
+                <button class="bianjian" id="sub3" onclick="subfun(this);">-</button>
+                <input type="text" class="shuru" id="ru3"  value="1" onkeyup="chufa(this);">
+                <button class="bianjia" id="plus3" onclick="plusfun(this);">+</button>
+            </td>
+            <td align="center" id="gai3" name="gai">1428.50</td>
+            <td align="center"><button class="yin" onclick="removerow(this);">删除</button></td>
+        </tr>
+        <tr class="zheng">
+
+
+            <td align="center" id="dicang">
+                <input type="checkbox" name="check">
+                <div id="caidan" >
+                </div>
+            </td>
+
+
+
+            <td><img src="4.jpg" name="tu" width="110px" height="110px" align="absmiddle">Fujifilm/富士 instax mini 25</td>
+            <td align="center" name="danjia">640.60</td>
+            <td align="center">
+                <button class="bianjian" id="sub4" onclick="subfun(this);">-</button>
+                <input type="text" class="shuru" id="ru4" value="1" onkeyup="chufa(this);">
+                <button class="bianjia" id="plus4" onclick="plusfun(this);">+</button>
+            </td>
+            <td align="center" id="gai4" name="gai">640.60</td>
+            <td align="center" >
+                <button class="yin" onclick="removerow(this);">删除</button>
+            </td>
+        </tr>
+        <tr class="di">
+            <td colspan="5" height="50px">
+                <input type="checkbox" class="didi" id="quanxuan2"><span>全选</span>
+                <span class="dishan"><button class="yin" onclick="removeall(this);">删除</button></span>
+                <span >已选</span>
+                <span id="show">4</span>
+                <span>件</span>
+                <span><input type="button" class="yin" id="chakan" value="▲" onclick="chuxian();"></input></span>
+                <span>合计￥</span>
+                <span id="money">11957.48</span>
+            </td>
+            <td align="center">
+                <span ><button class="yin" id="jiesuan">结算</button></span>
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        console.log('********',document.getElementsByClassName('all').length);
+        var allmany = 0;
+        var shurulie = document.getElementsByClassName('shuru')
+        for (var i=0; i<shurulie.length; i++){
+            allmany += Number(shurulie[i].value);
+        }
+
+        //全选功能
+        var quanxuan = document.getElementById('quanxuan');
+        var quanxuan2 = document.getElementById('quanxuan2');
+        var tr1 = document.getElementsByName('check');
+        console.log(tr1);
+        quanxuan.onclick = function () {
+            if (quanxuan.checked == true){
+                 for (var i = 0; i < tr1.length; i++){
+                     tr1[i].checked = true;
+                 }
+            } else {
+                for (var i = 0; i < tr1.length; i++){
+                     tr1[i].checked = false;
+                 }
+            }
+        }
+        quanxuan2.onclick = function () {
+            if (quanxuan2.checked == true){
+                 for (var i = 0; i < tr1.length; i++){
+                     tr1[i].checked = true;
+                 }
+            } else {
+                for (var i = 0; i < tr1.length; i++){
+                     tr1[i].checked = false;
+                 }
+            }
+        }
+        //输入框值改变时触发
+        function chufa(ele) {
+            ele.parentElement.nextElementSibling.innerHTML = ele.value*ele.parentElement.previousElementSibling.innerHTML;
+            showmany();
+            allmany = 0;
+            for (var i=0; i<shurulie.length; i++){
+                allmany += Number(shurulie[i].value);
+            }
+            document.getElementById('show').innerHTML = allmany;
+        }
+        //加减功能
+        var shuru = document.getElementsByClassName('shuru');
+        var bianjian = document.getElementsByClassName('bianjian');
+        console.log(shuru)
+        console.log(bianjian)
+        for (var i=0; i<shuru.length; i++){
+            bianjian[i].disabled = true;
+        }
+        function subfun(ele) {
+            ele.nextElementSibling.value--;
+            ele.parentElement.nextElementSibling.innerHTML=ele.nextElementSibling.value*ele.parentElement.previousElementSibling.innerHTML;
+            if (ele.nextElementSibling.value == 0) {
+                ele.nextElementSibling.value++;
+                ele.disabled = true;
+                alert('不能再减！');
+           }
+            allmany = 0;
+            for (var i=0; i<shurulie.length; i++){
+                allmany += Number(shurulie[i].value);
+            }
+            showmany();
+        }
+        function plusfun(ele) {
+            ele.previousElementSibling.value++;
+
+            // console.log(ele.parentElement.nextElementSibling.innerHTML)
+            // console.log(ele.nextElementSibling.value*ele.parentElement.previousElementSibling.innerHTML)
+            ele.parentElement.nextElementSibling.innerHTML=ele.previousElementSibling.value*ele.parentElement.previousElementSibling.innerHTML;
+            if (ele.previousElementSibling.value > 1) {
+                ele.previousElementSibling.previousElementSibling.disabled = false;
+           }
+            allmany = 0;
+            for (var i=0; i<shurulie.length; i++){
+                allmany += Number(shurulie[i].value);
+            }
+            showmany();
+        }
+        //计算总价钱
+        function showmany() {
+            allmany = 0;
+            for (var i=0; i<shurulie.length; i++){
+                allmany += Number(shurulie[i].value);
+            }
+            if (flag2 == true){
+
+                console.log('hhhhhhhhhhhhhhhhhh');
+                document.getElementById('show').innerHTML = 0;
+                flag2 = false;
+            }
+            document.getElementById('show').innerHTML = allmany;
+            var shuruarr = document.getElementsByClassName('shuru');
+            var danjiaarr = document.getElementsByName('danjia');
+            var money = 0;
+
+            for (var i=0; i<shuruarr.length; i++){
+                // console.log(shuru.)
+                money += shuruarr[i].value*danjiaarr[i].innerHTML;
+            }
+            document.getElementById('money').innerHTML = money;
+
+        }
+        //删除本行
+        function removerow(ele) {
+            ele.parentElement.previousElementSibling.previousElementSibling.firstElementChild.nextElementSibling.value = 0;
+            console.log(ele.parentElement.previousElementSibling.previousElementSibling.firstElementChild.nextElementSibling.value);
+            ele.parentElement.parentElement.remove();
+            jiatu();
+            showmany();
+        }
+        //删除所有
+        flag2 = false;
+        function removeall(ele) {
+            var check = document.getElementsByName('check');
+            var allrow = document.getElementsByClassName("zheng")
+            len = check.length;
+            console.log(check)
+            console.log('sssssssssssssssssss');
+            if (ele.parentElement.previousElementSibling.previousElementSibling.checked == true) {
+                if (confirm('确定全部删除吗？') == true){
+                    for (var i=0; i<len; i++){
+                        document.getElementById('show').innerHTML = allrow.length-1;
+                        allrow[0].remove();
+                    }
+                }
+            }
+
+            jiatu();
+            flag2 =true;
+            showmany();
+            console.log('sssssssssssssssssss')
+
+        }
+        function chuxian() {
+            if (document.getElementById('chakan').value == '▼'){
+                document.getElementById('caidan').style.display = "none";
+                document.getElementById('chakan').value = '▲';
+            }
+            else{
+                document.getElementById('caidan').style.display = "block";
+                document.getElementById('chakan').value = '▼';
+                jiatu();
+            }
+        }
+        function jiatu() {
+            var shuruarr = document.getElementsByClassName('shuru');
+            var caidan = document.getElementById('caidan');
+            var caidantu = caidan.childNodes;
+            // console.log(caidantu)
+            var tu = document.getElementsByName('tu');
+            console.log(caidan.childElementCount)
+            console.log(caidan.childNodes.length)
+            console.log(caidan.children.length)
+            console.log(tu.length)
+            tulen = tu.length;
+            caidanchlen = caidan.children.length;
+            if (caidanchlen>0){
+                caidan.innerHTML = null;
+                }
+            // }
+            // for (var i=0; i<tulen)
+
+            // console.log('llllllllllllllll',caidan.childElementCount)
+            // if (Number(caidan.childElementCount)>0){
+            //     console.log(caidan.childElementCount)
+            //     // caidan.removeChild(this);
+            //     for (var i=0; i<caidan.childElementCount; i++){
+            //         caidan.removeChild(caidan.childNodes[i]);
+            //     }
+            // }
+            // caidan.removeChild();
+            // tulen = tu.length;
+            // console.log(tulen)
+            // for (var i=0; i<tulen; i++){
+            //      tu[i].remove();
+            // }
+            for (var i=0; i<tu.length; i++){
+                if (shuruarr[i].value>=1){
+                    // console.log(tu[i].src)
+                    var imag = document.createElement("img");
+                    imag.src = tu[i].src;
+                    imag.style.height = "110px";
+                    caidan.appendChild(imag);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
